@@ -1,0 +1,81 @@
+.title .this-month {
+    color: #DB4444;
+    font-weight: 600;
+    position: relative;
+    height: 40px;
+}
+
+.title .this-month::before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    background: #DB4444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.title .this-month p {
+    margin-left: 30px;
+}
+
+.title .best-sales a {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    background: #DB4444;
+    color: white;
+}
+
+.parent {
+    height: fit-content;
+    background: #000000;
+    position: relative;
+}
+
+.parent .left>p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #00FF66;
+}
+
+.parent .left button {
+    background: #00FF66;
+    color: white;
+}
+.parent .left .times div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.parent .left .times div p {
+    margin: 0;
+    padding: 0;
+}
+.parent .left .times div p:first-child {
+    font-weight: 900;
+}
+.parent .left .times div p:last-child {
+    font-size: 10px;
+    font-weight: 700;
+}
+.parent .right {
+    position: relative;
+}
+.parent .right img {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}

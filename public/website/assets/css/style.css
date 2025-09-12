@@ -1,0 +1,207 @@
+.landing {
+    height: calc(100vh - 69px) !important;
+    overflow: hidden;
+}
+
+.landing .right {
+    color: white;
+    padding: 0 !important;
+}
+
+.landing .right img {
+    height: calc(100vh - 69px) !important;
+    width: 100%;
+}
+
+.landing {
+    background: #121212;
+    height: 100%;
+}
+
+.landing .left {
+    color: white;
+}
+
+.landing .left h1 {
+    font-size: 50px;
+}
+
+.landing button {
+    font-weight: 600;
+    color: white;
+    background: #db4444;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.title .today {
+    color: #DB4444;
+    font-weight: 600;
+    position: relative;
+    height: 40px;
+}
+
+.title .today::before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    background: #DB4444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.sale {
+    position: relative;
+}
+
+.sale:hover>.product button {
+    bottom: 0;
+}
+
+.sale .product {
+    position: relative;
+    height: 250px;
+    background: #F5F5F5;
+    overflow: hidden;
+}
+
+.sale .product>button {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    background: black;
+    color: white;
+    transition: bottom .5s ease;
+    -webkit-transition: bottom .5s ease;
+    -moz-transition: bottom .5s ease;
+    -ms-transition: bottom .5s ease;
+    -o-transition: bottom .5s ease;
+}
+
+.sale .product .image {
+
+    width: 190px;
+    height: 180px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    -webkit-transform: translate(-50%, -40%);
+    -moz-transform: translate(-50%, -40%);
+    -ms-transform: translate(-50%, -40%);
+    -o-transform: translate(-50%, -40%);
+}
+
+.sale .product .icons {
+    height: 76px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sale .product .icons button {
+    border: none;
+    width: 34px;
+    height: 34px;
+    color: #F5F5F5;
+    font-size: 18px;
+    background: rgb(90, 90, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.sale .product .icons button img {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+    padding: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.sale .details p span:first-child {
+    color: #DB4444;
+}
+
+.sale .details p span:last-child {
+    color: #838383;
+}
+
+.sale .details .evaluation {
+    margin-top: -10px;
+}
+
+.sale .details .evaluation .stars img {
+    margin-left: 5px;
+}
+
+.sale .details .evaluation .stars img:first-child {
+    margin-left: 0;
+}
+
+.sale .details .evaluation .numberOfPeople {
+    color: #838383;
+}
+
+.flash-sales .swiper-slide {
+    width: 265px !important;
+}
+
+.flash-sales>.button {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.flash-sales>.button a {
+    padding: 13px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 30px !important;
+    margin-bottom: 40px;
+    border: none;
+    background: #DB4444;
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+/* ------------- Love ------------ */
+button.loved {
+    color: red !important;
+}
+
+
+
+/* Category */

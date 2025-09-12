@@ -1,0 +1,47 @@
+.title .categories {
+    color: #DB4444;
+    font-weight: 600;
+    position: relative;
+    height: 40px;
+}
+
+.title .categories::before {
+    content: "";
+    width: 20px;
+    height: 100%;
+    background: #DB4444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.title .categories p {
+    margin-left: 30px;
+}
+
+.category {
+    margin-bottom: 60px;
+}
+.category .card {
+    width: 170px;
+    height: 145px;
+}
+.category .card img {
+    width: 56px;
+    height: 56px;
+}
+.category .swiper-slide {
+    width: 170px !important;
+}
+.category .active {
+    background: #DB4444;
+    color: white;
+}
+
+.claud {
+    color: red;
+}
