@@ -19,11 +19,11 @@
     <!-- start landing component -->
     <header>
         <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Profile</a>
+            <x-nav-link route="website.index">Home</x-nav-link>
+            <x-nav-link route="website.about">About</x-nav-link>
+            <x-nav-link route="website.contact">Contact</x-nav-link>
+            <x-nav-link route="website.signup">sign up</x-nav-link>
+            <x-nav-link route="website.login">Log in</x-nav-link>
         </nav>
     </header>
 

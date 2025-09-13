@@ -6,17 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->decimal('percentage', 5, 2);
-            $table->dateTime('start_at');
-            $table->dateTime('end_at');
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade'); 
+            $table->decimal('amount', 10, 2); // المبلغ المدفوع
+            $table->string('payment_method'); // cash, card, paypal, etc.
+            $table->timestamp('sold_at')->useCurrent(); // وقت البيع
             $table->timestamps();
         });
+    
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('sales');

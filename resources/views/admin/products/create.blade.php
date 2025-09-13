@@ -13,7 +13,7 @@
 
 @if (Session::has('msg'))
 <div style="background-color: rgba(0,255,0,0.2); color: green;">
-    {{ Session::get('msg'); }}
+    {{ Session::get('msg') }}
 </div>
 @endif
 

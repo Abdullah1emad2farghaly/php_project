@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController
+class ProductController extends Controller
 {
     public function index (){
         $products = Product::get();
@@ -28,5 +28,7 @@ class ProductController
         $product = Product::findorfail($id);
         return view('admin.products.show', compact('product'));
     }
+
+
 
 }
