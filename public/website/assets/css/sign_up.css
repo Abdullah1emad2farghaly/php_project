@@ -1,0 +1,45 @@
+.sign-up .right input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #838383;
+}
+
+.sign-up .right input:focus {
+    outline: none;
+}
+
+.sign-up .right button {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: #DB4444;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sign-up .right a {
+    text-decoration: none;
+    color: #838383;
+    font-size: large;
+    font-weight: 600;
+    position: relative;
+}
+.sign-up .right a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px ;
+    background: #838383;
+    bottom: 0px;
+}
+.sign-up .right p:first-child {
+    color: #555555;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sign-up p:last-child {
+    display: none;
+}

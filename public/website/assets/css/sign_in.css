@@ -1,0 +1,37 @@
+.sign-in input, .sign-in a {
+    display: block;
+}
+
+.sign-in input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #8e8e8edd;
+}
+.sign-in input:focus {
+    outline: none;
+}
+.sign-in button {
+    background: #DB4444;
+    color: white;
+}
+.sign-in a {
+    text-decoration: none;
+    color: #DB4444;
+}
+
+.sign-in .signin-error {
+    position: fixed;
+    width: 280px;
+    height: 200px;
+    z-index: 10;
+    background: #d1d1d1;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    display: none !important;
+}
