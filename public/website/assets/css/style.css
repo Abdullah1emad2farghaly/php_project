@@ -1,4 +1,4 @@
-.landing {
+/* .landing {
     height: calc(100vh - 69px) !important;
     overflow: hidden;
 }
@@ -30,13 +30,19 @@
     font-weight: 600;
     color: white;
     background: #db4444;
-}
+} */
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+/* landing section */
+
+
+
+
 
 .title .today {
     color: #DB4444;

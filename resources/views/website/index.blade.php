@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="website/assets/css/style.css">
     <link rel="stylesheet" href="website/assets/css/category.css">
     <link rel="stylesheet" href="website/assets/css/bestSales.css">
+    <link rel="stylesheet" href="website/assets/css/landing.css">
     <link rel="stylesheet" href="website/assets/css/feature.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,30 +18,105 @@
 <body>
     <!-- start landing component -->
     <header>
-        <div class="landing p-md-0 pt-5 mb-5">
-            <div class="container">
-                <div class="row m-0 p-0 align-items-center justify-content-center mt-md-0 mt-sm-4">
-                    <div class="left col-md-5 col-12 h-100 text-md-start text-center m-md-0 mt-5">
-                        <h1 class='mb-4 fs-1'>
-                            More than
-                            just a game.
-                            It’s a lifestyle.
-                        </h1>
-                        <p class='mb-4'>
-                            Whether you’re just starting out, have played
-                            your whole life or you're a Tour pro, your
-                            swing is like a fingerprint Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Eligendi, at.
-                        </p>
-                        <button class='px-4 py-2 rounded border-0'>Shopping Now</button>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="website/assets/img/image1.jpg" alt="" />
+                <div class="content">
+                    <div class="title">MAGIC SLIDER</div>
+                    <div class="type">FLOWER</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Laboriosam perspiciatis aliquam cupiditate voluptates autem,
+                        incidunt molestiae recusandae consequuntur odit repellat ullam
+                        quasi quae quod dolorum, sed quas ab ducimus consectetur.
                     </div>
-                    <div class="right col-7 d-md-block d-none">
-                        <img src="website/assets/img/hocky.png" alt="" />
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image2.jpg" alt="" />
+                <div class="content">
+                    <div class="title">MAGIC SLIDER</div>
+                    <div class="type">NATURE</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Laboriosam perspiciatis aliquam cupiditate voluptates autem,
+                        incidunt molestiae recusandae consequuntur odit repellat ullam
+                        quasi quae quod dolorum, sed quas ab ducimus consectetur.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image3.jpg" alt="" />
+                <div class="content">
+                    <div class="title">MAGIC SLIDER</div>
+                    <div class="type">PLANT</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Laboriosam perspiciatis aliquam cupiditate voluptates autem,
+                        incidunt molestiae recusandae consequuntur odit repellat ullam
+                        quasi quae quod dolorum, sed quas ab ducimus consectetur.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image4.jpg" alt="" />
+                <div class="content">
+                    <div class="title">MAGIC SLIDER</div>
+                    <div class="type">NATURE</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Laboriosam perspiciatis aliquam cupiditate voluptates autem,
+                        incidunt molestiae recusandae consequuntur odit repellat ullam
+                        quasi quae quod dolorum, sed quas ab ducimus consectetur.
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+
+        <div class="thumbnail">
+            <div class="item">
+                <img src="website/assets/img/image1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="website/assets/img/image4.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="nextPrevArrows">
+            <button class="prev">
+                < </button>
+                    <button class="next">></button>
+        </div>
+    </div>
+
     <!-- end landing component -->
 
     <section class="container">
@@ -1003,9 +1079,11 @@
     </section>
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="/website/assets/js/landing.js"></script>
 </body>
 
 </html>
