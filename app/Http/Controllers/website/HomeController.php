@@ -16,4 +16,10 @@ class HomeController
     public function about(){
         return view('website.about');
     }
+    public function login(){
+        return view('website.sign_in');
+    }
+    public function signup(){
+        return view('website.sign_up');
+    }
 }

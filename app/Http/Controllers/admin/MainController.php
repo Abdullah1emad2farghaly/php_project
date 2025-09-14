@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -20,7 +21,8 @@ class MainController extends Controller
         return view('admin.create');
     }
     public function customers(){
-        return view('admin.customers');
+        $users = User::where('role','=','user')->get();
+        return view('admin.customers', compact('users'));
     }
     public function orders(){
         return view('admin.orders');

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
-    <link rel="stylesheet" href="website/assets/css/sign_up.css">
+    <link rel="stylesheet" href="public/website/assets/css/sign_up.css">
 </head>
 
 <body>
@@ -20,16 +20,16 @@
                         <h1 class='pt-4 mb-3'>Create an account</h1>
                         <p class='mb-4'>Enter your details below</p>
                         <div class='mb-4'>
-                            <input placeholder='Full Name' id='name' class='pt-3 pb-1 ps-1' />
+                            <input placeholder='Full Name' id='name' name="name" class='pt-3 pb-1 ps-1' />
                             <p class='ps-2 text-danger fs-6 m-0' id='testName'>The full name is not valid</p>
                         </div>
                         <div class='mb-4'>
-                            <input type="email" id='email' class='pt-3 pb-1 ps-1' placeholder='Email or Phone Number' />
+                            <input type="email" id='email' name="email" class='pt-3 pb-1 ps-1' placeholder='Email or Phone Number' />
                             <p class='text-danger ps-2' id='testEmail'>please enter your email valid</p>
                         </div>
                         <div class='mb-4'>
-                            <input type="password" id='password' class='pt-3 ps-1 pb-1' placeholder='Password' />
-                            <p class='text-danger ps-2 fs-6' id='testPassword'>should be 8 characters and contains
+                            <input type="password" id='password' name="password" class='pt-3 ps-1 pb-1' placeholder='Password' />
+                            <p class='text-danger ps-2 fs-6'  id='testPassword'>should be 8 characters and contains
                                 digits</p>
                         </div>
                         <button class='mt-4' type='submit'>Create Account</button>
