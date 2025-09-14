@@ -1,0 +1,51 @@
+/* .about .swiper:nth-child(2) .card,
+.about .swiper:nth-child(2) .swiper-wrapper {
+    width: 240px;
+    height: 200px;
+} */
+.about .swiper .swiper-wrapper .swiper-slide:nth-child(2) .card {
+    background: #DB4444;
+    color: white;
+}
+
+.about .swiper .card .icon {
+    width: 50px;
+    height: 50px;
+    background: #000000;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 5px solid #707070;
+}
+.about .swiper .swiper-wrapper .swiper-slide:nth-child(2) .card .icon {
+    background: #ffffff;
+    border: 5px solid #E07575;
+}
+.about .swiper .card .icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.about .swiper:nth-child(3) .swiper-wrapper .swiper-slide {
+    padding: 5px;
+}
+.about .swiper .customers {
+    box-shadow: 0 0 5px 0px #a6a6a6;
+}
+.about .swiper .customers img {
+    width: 100%;
+}
+.about .swiper .customers .links a {
+    color: black;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.about .swiper .customers .links a:first-child {
+    margin: 0;
+}
+.about .swiper:nth-child(3) .customers,
+.about .swiper:nth-child(3) .swiper-wrapper {
+    /* width: 300px !important; */
+}

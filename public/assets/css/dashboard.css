@@ -25,8 +25,8 @@
 
 
 * {
-    margin: 0 ;
-    padding: 0 ;
+    margin: 0;
+    padding: 0;
     outline: 0;
     appearance: none;
     border: 0;
@@ -56,7 +56,6 @@ body {
     margin: 0 auto;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 21rem;
-
 }
 
 a {
@@ -254,7 +253,6 @@ aside .sidebar .message-count {
 
 main {
     margin-top: 1.4rem;
-
 }
 
 main .date {
@@ -400,15 +398,16 @@ main .insights small {
     display: block;
 }
 
-main .recent-orders {
+
+.recent-orders {
     margin-top: 2rem;
 }
 
-main .recent-orders h2 {
+.recent-orders h2 {
     margin-bottom: .8rem;
 }
 
- table {
+table {
     background: var(--color-white);
     width: 100%;
     padding: 30px;
@@ -428,20 +427,21 @@ main .recent-orders h2 {
 }
 
 
-main .recent-orders table:hover {
+.recent-orders table:hover {
     box-shadow: none;
 }
 
-main table tbody td {
-    height: 2.8rem;
+table tbody td {
+    height: 2.9rem;
     border-bottom: 1px solid var(--color-light);
     color: var(--color-dark-variant);
 }
 
-main table tbody tr:last-child td {
+table tbody tr:last-child td {
     border: none;
 }
-main .recent-orders tbody a {
+
+.recent-orders tbody a {
     color: white;
     font-size: 14px;
     background: var(--color-warning);
@@ -452,17 +452,19 @@ main .recent-orders tbody a {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-main .recent-orders tbody a:nth-child(2) {
+
+.recent-orders tbody a:nth-child(2) {
     background: var(--color-success);
 }
-main .recent-orders tbody a:nth-child(3) {
+
+.recent-orders tbody a:nth-child(3) {
     background: var(--color-danger);
 }
-main .recent-orders > a {
+
+.recent-orders>a {
     text-align: center;
     display: block;
     margin: 1rem auto;
-
 }
 
 
@@ -648,8 +650,10 @@ main .recent-orders > a {
 
 /* create form */
 .product-form {
+    margin-top: 100px !important;
     max-width: 100%;
     margin: 30px auto;
+    height: fit-content;
     padding: 30px;
     background: #ffffff;
     border-radius: 15px;
@@ -664,7 +668,7 @@ main .recent-orders > a {
 }
 
 .product-form>div {
-    width: 70%;
+    width: 100%;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
@@ -699,17 +703,4 @@ main .recent-orders > a {
 .product-form button:hover {
     background-color: #0b5ed7;
     box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
-}
-
-
-
-
-
-
-table {
-    margin-top: 50px;
-}
-
-table td {
-    text-align: center;
 }

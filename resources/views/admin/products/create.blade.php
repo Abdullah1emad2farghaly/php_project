@@ -1,26 +1,28 @@
 @extends('shared.admin.app')
 @section('content')
 
-@if ($errors->any())
-<div class="danger" style="background-color: rgba(255,0,0,0.2); margin-top:30px; color:red;">
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
-@if (Session::has('msg'))
-<div style="background-color: rgba(0,255,0,0.2); color: green;">
-    {{ Session::get('msg') }}
-</div>
-@endif
+
 
 <form novalidate action="{{ route('admin.products.store') }}" method="POST" class="product-form"
     enctype="multipart/form-data">
     @csrf
     <h2>Add New Product</h2>
+    @if ($errors->any())
+    <div class="danger" style="background-color: rgba(255,0,0,0.2); margin-top:30px; color:red;">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if (Session::has('msg'))
+    <div style="background-color: rgba(0,255,0,0.2); color: green;">
+        {{ Session::get('msg') }}
+    </div>
+    @endif
 
     <!-- Name -->
     <div class="mb-3">

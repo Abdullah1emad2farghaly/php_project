@@ -1,0 +1,37 @@
+.contact .icon {
+    width: 40px;
+    height: 40px;
+    background: #DB4444;
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.contact .top {
+    border-bottom: 2px solid #929292;
+}
+
+.contact .data input,
+.contact textarea {
+    padding: 10px;
+    background: #F5F5F5;
+}
+.contact .data input:focus,
+.contact textarea:focus {
+    outline: none;
+}
+.contact button {
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    background: #DB4444;
+    color: white;
+}
+.contact .card {
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(138,138,138,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(138,138,138,1);
+    box-shadow: 0px 0px 7px 0px rgba(138,138,138,1);
+}

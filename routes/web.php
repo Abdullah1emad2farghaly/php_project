@@ -13,6 +13,6 @@ Route::controller(HomeController::class)->name('website.')->group(function(){
     Route::get('/login', 'login')->name('login');
 });
 
-    Route::get('/logout',function(){
-        return 'logout';
-    })->name('logout');
+Route::get('/logout',function(){
+    return 'logout';
+})->name('logout');

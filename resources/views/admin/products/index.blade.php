@@ -13,15 +13,15 @@
         </thead>
         <tbody>
             @foreach ($products as $product)
-            <tr>
+            <tr style="margin-top: 20px;">
                 <td>{{ $product['id'] }}</td>
                 <td>{{ $product['name'] }}</td>
                 <td>{{ $product['price'] }}</td>
                 <!-- <td class="warning"></td> -->
                 <td>
-                    <a href="{{ route('admin.products.show', $product['id']) }}">Show</a>
-                    <a href="">Update</a>
-                    <a href="">Delete</a>
+                    <a class="show" href="{{ route('admin.products.show', $product['id']) }}">Show</a>
+                    <a class="update">Update</a>
+                    <a class="delete">Delete</a>
                 </td>
             </tr>
             @endforeach
