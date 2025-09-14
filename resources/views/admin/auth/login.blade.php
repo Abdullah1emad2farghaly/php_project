@@ -23,8 +23,7 @@
                     <img src="website/assets/img/sign.png" class='w-100' alt="" />
                 </div>
                 <div class="col-lg-6 right px-lg-5 pt-lg-4">
-                    <form class="container px-lg-4" action="{{ route('login') }}" method="post">
-                        @csrf
+                    <form class="container px-lg-4" action="{{ route('login.form') }}">
                         <h1 class='pt-4 mb-3'>Log in to Exclusive</h1>
                         <p class='mb-5'>Enter your details below</p>
                         <input type="email" class='pt-3 pb-1 ps-1 mb-4' placeholder='Email or Phone Number' />

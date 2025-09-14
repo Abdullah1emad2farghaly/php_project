@@ -16,9 +16,8 @@
                     <img src="website/assets/img/sign.png" class='w-100' alt="" />
                 </div>
                 <div class="col-lg-6 right px-lg-5">
-                    <form class="container m-0 px-lg-4 p-0" method="post" action="{{ route('signup') }}">
-                    @csrf   
-                    <h1 class='pt-4 mb-3'>Create an account</h1>
+                    <form class="container m-0 px-lg-4 p-0">
+                        <h1 class='pt-4 mb-3'>Create an account</h1>
                         <p class='mb-4'>Enter your details below</p>
                         <div class='mb-4'>
                             <input placeholder='Full Name' id='name' name="name" class='pt-3 pb-1 ps-1' />

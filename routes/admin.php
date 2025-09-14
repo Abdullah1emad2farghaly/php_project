@@ -13,7 +13,7 @@ Route::post('/login','login')->name('login');
 Route::post('/logout','logout')->name('logout');
 });
 
-Route::middleware('admin')->group(function () {
+Route::middleware('IsAdmin')->group(function () {
 
     Route::controller(MainController::class)->group(function () {
         Route::get('/', 'index')->name('index');
