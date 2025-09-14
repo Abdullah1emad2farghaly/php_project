@@ -42,7 +42,14 @@
                     <x-actived route="admin.products.index" icon="fa-brands fa-product-hunt" label="Products"/>
                     <x-actived route="admin.products.create" icon="fa-solid fa-address-card" label="Add Product"/>
                     <x-actived route="admin.categories.index" icon="fa-brands fa-product-hunt" label="Category"/>
-                    <x-actived route="logout" icon="fa-solid fa-arrow-right-from-bracket" label="Log out"/>
+<form method="POST" action="{{ route('admin.logout') }}">
+    @csrf
+    <button type="submit" class="btn btn-link p-0">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+    </button>
+</form>
+
+
                 </div>
             </aside>
             <!-- end aside -->

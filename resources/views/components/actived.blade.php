@@ -1,4 +1,4 @@
-@props(['route', 'icon' => null, 'label'])
+@props(['route'=>null, 'icon' => null, 'label'])
 
 <a href="{{ route($route) }}" class="{{ request()->routeIs($route) ? 'active' : '' }}">
     @if ($icon)

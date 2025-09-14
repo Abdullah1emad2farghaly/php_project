@@ -19,7 +19,7 @@ class ProductController extends Controller
         return view('admin.products.create', compact('categories'));
     }
 
-    public function store(ProductRequest $request){
+    public function store(Request $request){
         Product::Create($request->all());
         return redirect()->back()->with('msg', 'created successfully');
     }

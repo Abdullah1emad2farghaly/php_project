@@ -22,4 +22,7 @@ class HomeController
     public function signup(){
         return view('website.sign_up');
     }
+    public function cart(){
+        return view('website.cart');
+    }
 }

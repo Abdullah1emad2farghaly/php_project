@@ -5,16 +5,16 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class UserMiddleware
 {
     public function handle($request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect()->route('login'); // لو مش عامل تسجيل دخول
+            return redirect()->route('login');
         }
 
-        if (Auth::user()->role !== 'admin') {
-            return redirect('/'); // لو يوزر عادي رجعه ع الموقع
+        if (Auth::user()->role === 'admin') {
+            return redirect()->route('admin.dashboard'); // رجعه ع الـ Admin
         }
 
         return $next($request);
