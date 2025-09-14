@@ -1,0 +1,55 @@
+footer {
+    background: #000000;
+    color: white;
+}
+footer .title {
+    font-weight: 600;
+    font-size: 19px;
+}
+footer .exclusive {
+    line-height: 1;
+}
+footer .exclusive p:nth-child(2) {
+    font-size: 17px;
+}
+footer .exclusive p:nth-child(3),
+.download-app p:nth-child(2) {
+    font-size: 12px;
+    color: rgb(174, 174, 174);
+}
+footer .exclusive input {
+    background: #000000;
+    padding: 5px;
+    color: white;
+
+}
+footer .exclusive div button {
+    border: none;
+    position: absolute;
+    left: 170px;
+    top: 1px;
+    background: url('/website/assets/img/icon-send.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+footer .exclusive div img {
+    width: 20px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+footer ul li a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    color: rgb(174, 174, 174);
+}
+.support ul li a:first-child {
+    line-height: 0;
+}
+
