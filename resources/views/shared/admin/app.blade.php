@@ -37,46 +37,46 @@
                 </div>
                 <div class="sidebar">
                     <!-- عملت component عشان اعرف اعمل active لما يدوس علي زرار لينك  -->
-                    <!-- <a href="{{ route('admin.index') }}">
+                    <a href="{{ route('admin.index') }}">
                         <span><i class="fa-solid fa-table-columns"></i></span>
                         <h3>Dashboard</h3>
-                    </a> -->
-                    <x-actived route="admin.index" icon="fa-solid fa-table-columns" label="Dashboard"/>
-                    <!-- <a href="{{ route('admin.customers') }}" >
+                    </a>
+                    <!-- <x-actived route="admin.index" icon="fa-solid fa-table-columns" label="Dashboard"/> -->
+                    <a href="{{ route('admin.customers') }}" >
                         <span><i class="fa-solid fa-person-military-pointing"></i></span>
                         <h3>Customers</h3>
-                    </a> -->
-                    <x-actived route="admin.customers" icon="fa-solid fa-person-military-pointing" label="Customers"/>
+                    </a>
+                    <!--    <x-actived route="admin.customers" icon="fa-solid fa-person-military-pointing" label="Customers"/> -->
 
-                    <!-- <a href="{{ route('admin.orders') }} }}">
+                    <a href="{{ route('admin.orders') }} }}">
                         <span><i class="fa-brands fa-first-order"></i></span>
                         <h3>Orders</h3>
-                    </a> -->
-                    <x-actived route="admin.orders" icon="fa-brands fa-first-order" label="Orders"/>
+                    </a>
+                    <!-- <x-actived route="admin.orders" icon="fa-brands fa-first-order" label="Orders"/> -->
 
                     <!-- <a href="route('admin') }}">
                         <span><i class="fa-solid fa-chart-simple"></i></span>
                         <h3>Analytics</h3>
                     </a> -->
 
-                    <!-- <a href="{{ route('admin.products.index') }}">
+                    <a href="{{ route('admin.products.index') }}">
                         <span><i class="fa-brands fa-product-hunt"></i></span>
                         <h3>Products</h3>
-                    </a> -->
-                    <x-actived route="admin.products.index" icon="fa-brands fa-product-hunt" label="Products"/>
+                    </a>
+                    <!-- <x-actived route="admin.products.index" icon="fa-brands fa-product-hunt" label="Products"/> -->
 
-                    <!-- <a href="{{route('admin.products.create') }}">
+                    <a href="{{route('admin.products.create') }}">
                         <span> <i class="fa-solid fa-address-card"></i></span>
                         <h3>Add Product</h3>
-                    </a> -->
-                    <x-actived route="admin.products.create" icon="fa-solid fa-address-card" label="Add Product"/>
+                    </a>
+                    <!-- <x-actived route="admin.products.create" icon="fa-solid fa-address-card" label="Add Product"/> -->
 
 
-                    <!-- <a href="{{ route('logout') }}">
+                    <a href="{{ route('logout') }}">
                         <span><i class="fa-solid fa-arrow-right-from-bracket"></i> </span>
                         <h3>Log out</h3>
-                    </a> -->
-                    <x-actived route="logout" icon="fa-solid fa-arrow-right-from-bracket" label="Log out"/>
+                    </a>
+                    <!-- <x-actived route="logout" icon="fa-solid fa-arrow-right-from-bracket" label="Log out"/> -->
 
 
                 </div>

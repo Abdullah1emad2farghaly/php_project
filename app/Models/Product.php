@@ -14,4 +14,5 @@ class Product extends Model
         "image",
         "category_id",
     ] ;
+    
 }

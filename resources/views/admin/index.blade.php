@@ -1,4 +1,4 @@
-@extends('shared.admin.app');
+@extends('shared.admin.app')
 @section('sales')
             <!-- ============ -->
             <main>

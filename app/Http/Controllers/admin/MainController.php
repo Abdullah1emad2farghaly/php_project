@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index(){
+ public function index()
+{
+    $totalSales = Product::where('created_at', '>=', now()->subDays(7))
+        ->sum('price');
 
-        $totalSales = Product::sum('price');
-        return view('admin.index',compact('totalSales'));
-    }
+    return view('admin.index', compact('totalSales'));
+}
+
     public function create(){
         return view('admin.create');
     }
