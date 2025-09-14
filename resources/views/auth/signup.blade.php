@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
-    <link rel="stylesheet" href="public/website/assets/css/sign_up.css">
+    <link rel="stylesheet" href="website/assets/css/sign_up.css">
+    <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -24,12 +25,14 @@
                             <p class='ps-2 text-danger fs-6 m-0' id='testName'>The full name is not valid</p>
                         </div>
                         <div class='mb-4'>
-                            <input type="email" id='email' name="email" class='pt-3 pb-1 ps-1' placeholder='Email or Phone Number' />
+                            <input type="email" id='email' name="email" class='pt-3 pb-1 ps-1'
+                                placeholder='Email or Phone Number' />
                             <p class='text-danger ps-2' id='testEmail'>please enter your email valid</p>
                         </div>
                         <div class='mb-4'>
-                            <input type="password" id='password' name="password" class='pt-3 ps-1 pb-1' placeholder='Password' />
-                            <p class='text-danger ps-2 fs-6'  id='testPassword'>should be 8 characters and contains
+                            <input type="password" id='password' name="password" class='pt-3 ps-1 pb-1'
+                                placeholder='Password' />
+                            <p class='text-danger ps-2 fs-6' id='testPassword'>should be 8 characters and contains
                                 digits</p>
                         </div>
                         <button class='mt-4' type='submit'>Create Account</button>
@@ -42,6 +45,8 @@
             </div>
         </div>
     </div>
+
+    <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
