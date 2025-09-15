@@ -25,4 +25,7 @@ class HomeController
     public function cart(){
         return view('website.cart');
     }
+    public function checkout(){
+        return view('website.checkout');
+    }
 }

@@ -1,17 +1,19 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0  ;
 }
 
 body {
     font-family: Arial, sans-serif;
     background: #fff;
-    margin: 40px;
     color: #222;
 }
 
 .cart-container {
     max-width: 900px;
     margin: 0 auto;
+    margin-bottom: 80px;
 }
 
 table {
@@ -19,6 +21,7 @@ table {
     border-collapse: separate;
     border-spacing: 0 16px;
 }
+
 
 thead tr th {
     text-align: left;
@@ -157,7 +160,7 @@ tbody tr td {
 
 .cart-total {
     margin-top: 36px;
-    max-width: 300px;
+    width: 350px;
     padding: 20px;
     border: 1px solid #444;
     border-radius: 4px;

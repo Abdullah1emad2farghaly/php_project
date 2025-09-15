@@ -30,4 +30,5 @@ Route::controller(HomeController::class)->name('website.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/about', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/cart/checkout', 'checkout')->name('checkout');
 });

@@ -9,7 +9,7 @@ class OrderItem extends Model
     protected $table = "order_items";
 
 
-     public function order()
+    public function order()
     {
         return $this->belongsTo(Order::class);
     }

@@ -14,6 +14,7 @@ class ProductController extends Controller
         $products = Product::get();
         return view('admin.products.index', compact('products'));
     }
+
     public function create (){
         $categories = Category::get();
         return view('admin.products.create', compact('categories'));
@@ -21,6 +22,7 @@ class ProductController extends Controller
 
     public function store(Request $request){
         Product::Create($request->all());
+        
         return redirect()->back()->with('msg', 'created successfully');
     }
 
@@ -28,7 +30,5 @@ class ProductController extends Controller
         $product = Product::findorfail($id);
         return view('admin.products.show', compact('product'));
     }
-
-
 
 }
