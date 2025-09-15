@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 
     // Cart
     Route::get('/cart', [HomeController::class, 'cart'])->name('website.cart');
+    Route::post('/wishlist', [HomeController::class,'wishlist'])->name('wishlist');
 
 });
 
@@ -30,4 +31,5 @@ Route::controller(HomeController::class)->name('website.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/about', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/single', 'single')->name('single');
 });

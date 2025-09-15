@@ -15,15 +15,16 @@
                 <td>{{ $category['id'] }}</td>
                 <td>{{ $category['name'] }}</td>
                 <!-- <td class="warning"></td> -->
-                <td>
-                    <a href="{{ route('admin.categories.create') }}" class="update" >add</a>
-                    <a class="update">Update</a>
-                    <a class="delete">Delete</a>
+                <td><form action="{{ route('admin.categories.destroy',$category['id']) }}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button class="delete" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <a href="">Show All</a>
+    <a href="{{ route('admin.categories.create') }}" class="update" >add</a>
 </div>
 @endsection

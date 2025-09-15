@@ -8,13 +8,7 @@ use App\Http\Controllers\Admin\OrdersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-| Prefix: /admin
-| Middleware: auth + IsAdmin
-*/
+
 
 // Login routes for admin (guest only)
 // Route::middleware('guest')->group(function () {
@@ -31,14 +25,14 @@ Route::middleware(['auth', 'IsAdmin'])->group(function () {
     });
 
     // Products
-    Route::controller(ProductController::class)
-        ->prefix('products')
-        ->name('products.')
-        ->group(function () {
+    Route::controller(ProductController::class)->prefix('products')->name('products.')->group(function () {
             Route::get('/', 'index')->name('index');       // admin.products.index
             Route::get('/create', 'create')->name('create');
             Route::post('/', 'store')->name('store');
             Route::get('/{id}', 'show')->name('show')->whereNumber('id');
+            Route::get('/edit/{id}','edit')->name('edit')->whereNumber('id');
+            Route::PUT('/update/{id}','update')->name('update')->whereNumber('id');
+            Route::DELETE('/{id}','destroy')->name('destroy')->whereNumber('id');
         });
 
     // Categories
@@ -48,13 +42,11 @@ Route::middleware(['auth', 'IsAdmin'])->group(function () {
             Route::get('/', 'index')->name('index');       // admin.categories.index
             Route::get('/create', 'create')->name('create');
             Route::post('/store', 'store')->name('store');
+            Route::delete('/{id}','destroy')->name('destroy')->whereNumber('id');
         });
 
     // Orders
-    Route::controller(OrdersController::class)
-        ->prefix('orders')
-        ->name('orders.')
-        ->group(function () {
+    Route::controller(OrdersController::class)->prefix('orders')->name('orders.')->group(function () {
             Route::get('/', 'index')->name('index');       // admin.orders.index
             Route::get('/{id}', 'show')->name('show')->whereNumber('id');
         });

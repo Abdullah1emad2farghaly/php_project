@@ -21,4 +21,9 @@ class CategoryController extends Controller
         Category::Create($request->all());
         return redirect()->back()->with('msg', 'created successfully');
     }
+        public function destroy($id){
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('msg','deleted');
+    }
 }

@@ -67,7 +67,7 @@ public function login(Request $request)
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return redirect()->route('website.index');
+    return redirect()->route('login');
 }
 
 }

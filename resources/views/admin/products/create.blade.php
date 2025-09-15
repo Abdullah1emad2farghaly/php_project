@@ -33,7 +33,7 @@
     <!-- image -->
     <div class="mb-3">
         <label for="image" class="form-label">Product Image :</label>
-        <input type="file" class="form-control" id="image" name="image">
+        <input type="file" class="form-control" id="image" name="img">
     </div>
 
     <!-- Price -->
@@ -46,7 +46,7 @@
     <!-- Quantity -->
     <div class="mb-3">
         <label for="quantity" class="form-label">Quantity :</label>
-        <input type="number" class="form-control" id="quantity" name="quantity" min="1" placeholder="Enter quantity"
+        <input type="number" class="form-control" id="quantity" name="stock" min="1" placeholder="Enter quantity"
             required>
     </div>
 

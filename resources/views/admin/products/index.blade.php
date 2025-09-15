@@ -20,8 +20,14 @@
                 <!-- <td class="warning"></td> -->
                 <td>
                     <a class="show" href="{{ route('admin.products.show', $product['id']) }}">Show</a>
-                    <a class="update">Update</a>
-                    <a class="delete">Delete</a>
+                    <a class="update" href="{{ route('admin.products.edit', $product['id']) }}">Edit</a>
+                    <form action="{{ route('admin.products.destroy',$product['id']) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button style="display:inline-block;">
+                    <a class="delete" onclick="return confirm('Are you sure?')">Delete</a>
+                    </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
