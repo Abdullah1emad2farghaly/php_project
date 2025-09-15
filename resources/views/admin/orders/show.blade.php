@@ -11,12 +11,16 @@
             <th>description</th>
         </tr>
     </thead>
-    <tbody>
- @foreach($order->items as $item)
+    <tbody> 
+
+            @foreach($products as $product)
                 <tr>
-                    <td>{{ $order->user->name }}</td>
-                    <td>{{ $item->price }}</td>
-                    <td>{{ $item->quantity }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td></td>
+                    <td>{{ $product->category_id }}</td>
+                    <td>{{ $product->stock }}</td>
+                    <td>{{ $product->description }}</td>
                 </tr>
             @endforeach
     </tbody>

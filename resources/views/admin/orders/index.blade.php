@@ -5,23 +5,21 @@
     <table>
         <thead>
             <tr>
-                <th>Order ID</th>
-                <th>User ID</th>
-                <th>Total Price</th>
-                <th>Status</th>
-                <th>Payment Method</th>
-                <th>Shipping Address</th>
+                <th>user name</th>
+                <th>user Email</th>
+                <th>Count orders</th>
+                <th>Show orders</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($orders as $order)
+            @foreach ($usersOrders as $usersOrder)
             <tr style="margin-top: 20px;">
-                <td>{{ $order['id'] }}</td>
-                <td>{{ $order['user_id'] }}</td>
-                <td>{{ $order['total_price'] }}</td>
-                <td>{{ $order['status'] }}</td>
-                <td>{{ $order['payment_method'] }}</td>
-                <td>{{ $order['shipping_address'] }}</td>
+                <td>{{ $usersOrder->name }}</td>
+                <td>{{ $usersOrder->email}}</td>
+                <td>{{ $usersOrder->total_orders}}</td>
+                <td>
+                    <a href="{{ route('admin.orders.show',$usersOrder->id ) }}">Show</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
