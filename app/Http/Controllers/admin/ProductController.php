@@ -15,6 +15,7 @@ class ProductController extends Controller
         $products = Product::get();
         return view('admin.products.index', compact('products'));
     }
+
     public function create (){
         $categories = Category::get();
         return view('admin.products.create', compact('categories'));
@@ -35,6 +36,7 @@ class ProductController extends Controller
     $validated['img'] = $path;
 
         Product::Create($validated);
+    
         return redirect()->back()->with('msg', 'created successfully');
     }
 
@@ -79,3 +81,4 @@ public function update(Request $request, $id)
 
 
 }
+    

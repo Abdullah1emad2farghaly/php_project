@@ -56,6 +56,6 @@ Route::middleware(['auth', 'IsAdmin'])->group(function () {
         Auth::logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
-        return redirect()->route('admin.login.form');
+        return redirect()->route('website.login.form');
     })->name('logout');
 });

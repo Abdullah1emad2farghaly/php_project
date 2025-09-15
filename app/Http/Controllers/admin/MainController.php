@@ -9,23 +9,25 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
- public function index()
-{
-    $totalSales = Product::where('created_at', '>=', now()->subDays(7))
-        ->sum('price');
+    public function index()
+    {
+        $totalSales = Product::where('created_at', '>=', now()->subDays(7))
+            ->sum('price');
 
-    return view('admin.index', compact('totalSales'));
-}
+        return view('admin.index', compact('totalSales'));
+    }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.create');
     }
-    public function customers(){
-        $users = User::where('role','=','user')->get();
+    public function customers()
+    {
+        $users = User::where('role', '=', 'user')->get();
         return view('admin.customers', compact('users'));
     }
-    public function orders(){
+    public function orders()
+    {
         return view('admin.orders');
     }
-
 }
