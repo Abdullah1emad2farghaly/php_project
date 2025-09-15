@@ -26,18 +26,18 @@
             <x-nav-link route="website.contact">Contact</x-nav-link>
 
             @guest
-            <x-nav-link route="website.signup.form">Sign Up</x-nav-link>
-            <x-nav-link route="login">Login</x-nav-link>
+                <x-nav-link route="website.signup.form">Sign Up</x-nav-link>
+                <x-nav-link route="login">Login</x-nav-link>
             @endguest
 
             @auth
-            <x-nav-link route="website.cart">Cart</x-nav-link>
-            <form action="{{ route('website.logout') }}" method="POST" style="display:inline">
-                @csrf
-                <button type="submit" style="background:none;border:none;color:white;cursor:pointer;">
-                    Logout
-                </button>
-            </form>
+                <x-nav-link route="website.cart">Cart</x-nav-link>
+                <form action="{{ route('website.logout') }}" method="POST" style="display:inline">
+                    @csrf
+                    <button type="submit" style="background:none;border:none;color:white;cursor:pointer;">
+                        Logout
+                    </button>
+                </form>
             @endauth
         </nav>
     </header>
@@ -110,7 +110,6 @@
                 </div>
             </div>
         </div>
-
         <div class="thumbnail">
             <div class="item">
                 <img src="website/assets/img/image1.jpg" alt="">
@@ -149,198 +148,52 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="sale card" id='1000' rate='5'>
-                        <div class="product">
-                            <div class="image">
-                                <img src="website/assets/img/sale-1.png" alt="" />
-                            </div>
-                            <div class="icons">
-                                <button>
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
-                                <button class='view'>
-                                    <img src="website/assets/img/view.png" alt="" />
-                                </button>
-                            </div>
-                            <button class='add-cart'>Add To Cart</button>
-                            <p class='d-none'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Voluptas nisi non magni libero itaque odit,
-                                debitis inventore necessitatibus eligendi, suscipit
-                                soluta. Consectetur rem consequuntur saepe quisquam
-                                ullam dolorum, error reprehenderit natus mollitia modi
-                                necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                            </p>
-                        </div>
-                        <div class="details ps-3">
-                            <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                            <p>
-                                <span>$120</span>
-                                <span class='ms-3'>
-                                    <del>$160</del>
-                                </span>
-                            </p>
-                            <div class="evaluation d-flex pb-3">
-                                <div class="stars">
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
+                @foreach ($product4 as $product)
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="sale card" id='1000' rate='5'>
+                            <div class="product">
+                                <div class="image">
+                                    <img src="/storage/{{$product->img}}" alt="" />
                                 </div>
-                                <div class="numberOfPeople ms-3">
-                                    (88)
+                                <div class="icons">
+                                    <button>
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class='view'>
+                                        <img src="website/assets/img/view.png" alt="" />
+                                    </button>
+                                </div>
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="add-cart">Add To Cart</button>
+                                </form>
+                                <p class='d-none'>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Voluptas nisi non magni libero itaque odit,
+                                    debitis inventore necessitatibus eligendi, suscipit
+                                    soluta. Consectetur rem consequuntur saepe quisquam
+                                    ullam dolorum, error reprehenderit natus mollitia modi
+                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
+                                </p>
+                            </div>
+                            <div class="details ps-3">
+                                <h6 class='pt-3'>{{$product['name']}}</h6>
+                                <p>
+                                    <span>{{$product['price']}}</span>
+                                </p>
+                                <div class="evaluation d-flex pb-3">
+                                    <div class="numberOfPeople ms-3">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="sale card" id='1001' rate='5'>
-                        <div class="product">
-                            <div class="image">
-                                <img src="website/assets/img/sale-2.png" alt="" />
-                            </div>
-                            <div class="icons">
-                                <button>
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
-                                <button class='view'>
-                                    <img src="website/assets/img/view.png" alt="" />
-                                </button>
-                            </div>
-                            <button class='add-cart'>Add To Cart</button>
-                            <p class='d-none'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Voluptas nisi non magni libero itaque odit,
-                                debitis inventore necessitatibus eligendi, suscipit
-                                soluta. Consectetur rem consequuntur saepe quisquam
-                                ullam dolorum, error reprehenderit natus mollitia modi
-                                necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                            </p>
-                        </div>
-                        <div class="details ps-3">
-                            <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                            <p>
-                                <span>$120</span>
-                                <span class='ms-3'>
-                                    <del>$160</del>
-                                </span>
-                            </p>
-                            <div class="evaluation d-flex pb-3">
-                                <div class="stars">
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                </div>
-                                <div class="numberOfPeople ms-3">
-                                    (88)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="sale card" id='1002' rate='5'>
-                        <div class="product">
-                            <div class="image">
-                                <img src="website/assets/img/sale-3.png" alt="" />
-                            </div>
-                            <div class="icons">
-                                <button>
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
-                                <button class='view'>
-                                    <img src="website/assets/img/view.png" alt="" />
-                                </button>
-                            </div>
-                            <button class='add-cart'>Add To Cart</button>
-                            <p class='d-none'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Voluptas nisi non magni libero itaque odit,
-                                debitis inventore necessitatibus eligendi, suscipit
-                                soluta. Consectetur rem consequuntur saepe quisquam
-                                ullam dolorum, error reprehenderit natus mollitia modi
-                                necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                            </p>
-                        </div>
-                        <div class="details ps-3">
-                            <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                            <p>
-                                <span>$120</span>
-                                <span class='ms-3'>
-                                    <del>$160</del>
-                                </span>
-                            </p>
-                            <div class="evaluation d-flex pb-3">
-                                <div class="stars">
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                </div>
-                                <div class="numberOfPeople ms-3">
-                                    (88)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="sale card" id='1003' rate='5'>
-                        <div class="product">
-                            <div class="image">
-                                <img src="website/assets/img/sale-4.png" alt="" />
-                            </div>
-                            <div class="icons">
-                                <button>
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
-                                <button class='view'>
-                                    <img src="website/assets/img/view.png" alt="" />
-                                </button>
-                            </div>
-                            <button class='add-cart'>Add To Cart</button>
-                            <p class='d-none'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Voluptas nisi non magni libero itaque odit,
-                                debitis inventore necessitatibus eligendi, suscipit
-                                soluta. Consectetur rem consequuntur saepe quisquam
-                                ullam dolorum, error reprehenderit natus mollitia modi
-                                necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                            </p>
-                        </div>
-                        <div class="details ps-3">
-                            <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                            <p>
-                                <span>$120</span>
-                                <span class='ms-3'>
-                                    <del>$160</del>
-                                </span>
-                            </p>
-                            <div class="evaluation d-flex pb-3">
-                                <div class="stars">
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                    <img src="website/assets/img/star.png" alt="" />
-                                </div>
-                                <div class="numberOfPeople ms-3">
-                                    (88)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="button mt-5">
-                <a href='/products'>View All Products</a>
-            </div>
+        </div>
+        <div class="button mt-5">
+            <a href='/products'>View All Products</a>
+        </div>
         </div>
         <hr>
         <!-- start enhancecategory component -->
@@ -1098,7 +951,7 @@
     @include('shared.website.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="/website/assets/js/landing.js"></script>
 </body>
 

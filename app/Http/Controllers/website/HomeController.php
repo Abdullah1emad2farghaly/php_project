@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Product;
 
 class HomeController
 {
     public function index(){
-        return view('website.index');
+        $product4 = Product::limit(4)->get();
+        return view('website.index', compact('product4'));
     }
     public function contact(){
         return view('website.contact');
@@ -21,9 +22,6 @@ class HomeController
     }
     public function signup(){
         return view('website.sign_up');
-    }
-    public function cart(){
-        return view('website.cart');
     }
 
     public function checkout(){

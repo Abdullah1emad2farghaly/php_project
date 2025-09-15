@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,10 +21,10 @@ Route::middleware('auth')->group(function () {
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('website.logout');
 
-    // Cart
-    Route::get('/cart', [HomeController::class, 'cart'])->name('website.cart');
-    Route::post('/wishlist', [HomeController::class,'wishlist'])->name('wishlist');
-
+    //Cart
+    Route::get('/cart', [CartController::class, 'viewCart'])->name('website.cart');
+    Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::DELETE('cart/{id}', [CartController::class,'destroy'])->name('cart.destroy');
 });
 
 // Public pages (accessible for everyone)

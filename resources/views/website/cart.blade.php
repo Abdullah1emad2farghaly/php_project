@@ -22,37 +22,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <button class="remove-btn" type="button">×</button>
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0892fa90-4844-4877-9b62-5a8349ec7b0c.png"
-                                alt="LCD Monitor black screen with stand on white background" width="70" height="50" />
-                            <span class="product-text">LCD Monitor</span>
-                        </div>
-                    </td>
-                    <td class="price">$650</td>
-                    <td>
-                        <input type="number" min="1" value="1" class="quantity-select">
-                    </td>
-                    <td class="subtotal">$650</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="product-info">
-                            <button class="remove-btn" type="button">×</button>
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1750079d-2d34-4cab-a9d3-250fa548cf47.png"
-                                alt="Red gaming controller with black details on white background" width="70"
-                                height="50" />
-                            <span class="product-text">HI Gamepad</span>
-                        </div>
-                    </td>
-                    <td class="price">$550</td>
-                    <td>
-                        <input type="number" min="1" value="1" class="quantity-select">
-                    </td>
-                    <td class="subtotal">$1100</td>
-                </tr>
+                @foreach ($products as $product)
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <form action="{{ route('cart.destroy', $product->order_id) }}" method="post">
+                                    @csrf
+                                    @method('Delete')
+                                    <button class="remove-btn" type="submit">×</button>
+                                </form>
+                                <img src="/storage/{{$product->img}}"
+                                    alt="LCD Monitor black screen with stand on white background" width="70" height="50" />
+                                <span class="product-text">{{$product->name}}</span>
+                            </div>
+                        </td>
+                        <td class="price">${{ $product->price }}</td>
+                        <td>
+                            <input type="number" min="1" value="{{ $product->quantity }}" class="quantity-select">
+                        </td>
+                        <td class="subtotal">${{ $product->price * $product->quantity}}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 

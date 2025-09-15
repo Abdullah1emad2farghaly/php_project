@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Auth;
 
 
 // Login routes for admin (guest only)
-// Route::middleware('guest')->group(function () {
-//     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-//     Route::post('/login', [AuthController::class, 'login'])->name('login');
-// });
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+});
 
 Route::middleware(['auth', 'IsAdmin'])->group(function () {
 
