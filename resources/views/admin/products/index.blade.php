@@ -1,4 +1,4 @@
-@extends('shared.admin.app');
+@extends('shared.admin.app')
 @section('content')
 <div class="recent-orders">
     <h2>Recent Orders</h2>
@@ -21,18 +21,18 @@
                 <td>
                     <a class="show" href="{{ route('admin.products.show', $product['id']) }}">Show</a>
                     <a class="update" href="{{ route('admin.products.edit', $product['id']) }}">Edit</a>
-                    <form action="{{ route('admin.products.destroy',$product['id']) }}" method="post">
+                    <form action="{{ route('admin.products.destroy',$product['id']) }}" method="post"
+                        style="display: inline;">
                         @method('DELETE')
                         @csrf
-                        <button style="display:inline-block;">
-                    <a class="delete" onclick="return confirm('Are you sure?')">Delete</a>
-                    </button>
+                        <button style="display:inline;">
+                            <a class="delete" onclick="return confirm('Are you sure?')">Delete</a>
+                        </button>
                     </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <a href="">Show All</a>
 </div>
 @endsection

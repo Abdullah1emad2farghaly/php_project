@@ -1,28 +1,33 @@
-@extends('shared.admin.app');
+@extends('shared.admin.app')
 @section('content')
 <table style="width: 100%;">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>quantity</th>
-            <th>description</th>
-        </tr>
-    </thead>
-    <tbody> 
+    <tbody>
 
-            @foreach($products as $product)
-                <tr>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td></td>
-                    <td>{{ $product->category_id }}</td>
-                    <td>{{ $product->stock }}</td>
-                    <td>{{ $product->description }}</td>
-                </tr>
-            @endforeach
+        @foreach($products as $product)
+        <tr>
+            <th>Name:</th>
+            <td>{{ $product->name }}</td>
+        </tr>
+        <tr>
+            <th>Price:</th>
+            <td>{{ $product->price }}</td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td>{{ $product->category_id }}</td>
+        </tr>
+        <tr>
+            <th>Quantity:</th>
+            <td>{{ $product->stock }}</td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td>{{ $product->description }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border-bottom: 1px solid red; font-weight:600; color:red;">end order</td>
+        </tr>
+        @endforeach
     </tbody>
 </table>
 @endsection
