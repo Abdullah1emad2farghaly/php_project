@@ -9,13 +9,31 @@
     <link rel="stylesheet" href="website/assets/css/footer.css">
     <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="website/assets/css/landing.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+    header {
+        width: 100% !important;
+        max-width: 100%;
+        margin: 0;
+        background-color: black;
+    }
+
+    header nav {
+        max-width: 80%;
+        margin-left: 10%;
+    }
+    </style>
 </head>
 
 <body>
+    <header>
+        @include('shared.website.nav-link')
+    </header>
     <div class="contact my-5 ">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 mb-4">
+                <div class="col-lg-5 mb-4" data-aos="fade-right" data-aos-duration="1000">
                     <div class="card p-5 border-0">
                         <div class="top pb-4">
                             <div class="call mb-4 d-flex align-items-center">
@@ -40,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 mb-4">
+                <div class="col-lg-7 mb-4" data-aos="fade-left" data-aos-duration="1000">
                     <div class="card py-5 px-3 border-0">
                         <div class="data d-sm-flex d-block gap-2">
                             <input type="text" class='w-100 mt-3 border-0 d-block' placeholder='Your Name' />
@@ -58,6 +76,10 @@
 
     <script src="/assets/fontawesome/js/all.js"></script>
     <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 </body>
 
 </html>

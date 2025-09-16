@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', [CartController::class, 'viewCart'])->name('website.cart');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::DELETE('cart/{id}', [CartController::class,'destroy'])->name('cart.destroy');
+    Route::put('/cart/update', [CartController::class, 'update'])->name('cart.update');
 });
 
 // Public pages (accessible for everyone)

@@ -42,7 +42,11 @@ public function viewCart()
         WHERE o.user_id = ?
     ", [$userId]);
 
-    return view('website.cart', compact('products'));
+    $total = 0;
+    foreach ($products as $product) {
+        $total += $product->price * $product->quantity;
+        }
+    return view('website.cart', compact('products','total'));
 }
 
 
@@ -53,4 +57,16 @@ public function viewCart()
 
     return redirect()->route('website.cart');
    }
+   public function update(Request $request) {
+      
+    $quantities = $request->input('quantities'); // مصفوفة order_id => quantity
+        foreach ($quantities as $orderId => $quantity) {
+            DB::table('orders')->where('id', $orderId)->update([
+                'quantity' => $quantity
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Cart updated successfully!');
+    }
+
 }

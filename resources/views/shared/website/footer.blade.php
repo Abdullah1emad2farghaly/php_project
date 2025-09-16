@@ -1,7 +1,8 @@
 <footer class='pt-5 p-5'>
     <div class='container'>
         <div class="row">
-            <div class="col-lg-3 col-sm-6 exclusive mb-5">
+            <div class="col-lg-3 col-sm-6 exclusive mb-5" data-aos="fade-left" data-aos-duration="800"
+                data-aos-delay="0">
                 <p class="title mb-4">
                     Exclusive
                 </p>
@@ -14,7 +15,8 @@
                     <button></button>
                 </div>
             </div>
-            <div class="col-lg-2 col-sm-6 col-12 support mb-5">
+            <div class="col-lg-2 col-sm-6 col-12 support mb-5" data-aos="fade-left" data-aos-duration="800"
+                data-aos-delay="500">
                 <p class="title">
                     Support
                 </p>
@@ -37,7 +39,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-6 col-12 account mb-5">
+            <div class="col-lg-2 col-sm-6 col-12 account mb-5" data-aos="fade-left" data-aos-duration="800"
+                data-aos-delay="1000">
                 <p class="title">
                     Account
                 </p>
@@ -59,7 +62,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-6 col-12 quick-link mb-5">
+            <div class="col-lg-2 col-sm-6 col-12 quick-link mb-5" data-aos="fade-left" data-aos-duration="800"
+                data-aos-delay="1500">
                 <p class="title">
                     Quick Link
                 </p>
@@ -78,7 +82,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-sm-6 col-12 download-app mb-5">
+            <div class="col-lg-3 col-sm-6 col-12 download-app mb-5" data-aos="fade-left" data-aos-duration="800"
+                data-aos-delay="2000">
                 <p class="title">
                     Download App
                 </p>
