@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    @include('shared.website.nav-link')
     <div class="about my-5">
         <div class="container">
             <div class="row p-0 m-0">

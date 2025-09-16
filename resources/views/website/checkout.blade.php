@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    @include('shared.website.nav-link')
     <div class="container-check">
         <!-- Billing Detalis -->
         <div>
@@ -106,9 +106,9 @@
     </div>
 
 
-    <!-- @include("shared.website.footer") -->
+    @include("shared.website.footer")
 
-    <!-- <script src="/assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script> -->
+    <script src="/assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
