@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="website/assets/css/landing.css">
     <link rel="stylesheet" href="website/assets/css/feature.css">
     <link rel="stylesheet" href="website/assets/css/footer.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,18 +24,18 @@
             <x-nav-link route="website.contact">Contact</x-nav-link>
 
             @guest
-                <x-nav-link route="website.signup.form">Sign Up</x-nav-link>
-                <x-nav-link route="login">Login</x-nav-link>
+            <x-nav-link route="website.signup.form">Sign Up</x-nav-link>
+            <x-nav-link route="login">Login</x-nav-link>
             @endguest
 
             @auth
-                <x-nav-link route="website.cart">Cart</x-nav-link>
-                <form action="{{ route('website.logout') }}" method="POST" style="display:inline">
-                    @csrf
-                    <button type="submit" style="background:none;border:none;color:white;cursor:pointer;">
-                        Logout
-                    </button>
-                </form>
+            <x-nav-link route="website.cart">Cart</x-nav-link>
+            <form action="{{ route('website.logout') }}" method="POST" style="display:inline">
+                @csrf
+                <button type="submit" style="background:none;border:none;color:white;cursor:pointer;">
+                    Logout
+                </button>
+            </form>
             @endauth
         </nav>
     </header>
@@ -137,10 +135,12 @@
     <section class="container">
         <div class="flash-sales">
             <div class="title">
-                <div class="today d-flex align-items-center">
+                <div class="today d-flex align-items-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1000">
                     <p class='ms-5 mt-3'>Today's</p>
                 </div>
-                <div class="flash d-flex mt-4 mb-4">
+                <div class="flash d-flex mt-4 mb-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1000">
                     <h2>Flash Sales</h2>
                     <div class="date">
 
@@ -149,54 +149,51 @@
             </div>
             <div class="row">
                 @foreach ($product4 as $product)
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="sale card" id='1000' rate='5'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="/storage/{{$product->img}}" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="add-cart">Add To Cart</button>
-                                </form>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="sale card" id='1000' rate='5'>
+                        <div class="product">
+                            <div class="image">
+                                <img src="/storage/{{$product->img}}" alt="" />
                             </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>{{$product['name']}}</h6>
-                                <p>
-                                    <span>{{$product['price']}}</span>
-                                </p>
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="numberOfPeople ms-3">
-                                    </div>
+                            <!-- <div class="icons">
+                                <button>
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                                <button class='view'>
+                                    <img src="website/assets/img/view.png" alt="" />
+                                </button>
+                            </div> -->
+                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="add-cart">Add To Cart</button>
+                            </form>
+                            <p class='d-none'>
+                                Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Voluptas nisi non magni libero itaque odit,
+                                debitis inventore necessitatibus eligendi, suscipit
+                                soluta. Consectetur rem consequuntur saepe quisquam
+                                ullam dolorum, error reprehenderit natus mollitia modi
+                                necessitatibus culpa aliquid quidem magnam quas voluptatum!
+                            </p>
+                        </div>
+                        <div class="details ps-3">
+                            <h6 class='pt-3'>{{$product['name']}}</h6>
+                            <p>
+                                <span>${{$product['price']}}</span>
+                            </p>
+                            <div class="evaluation d-flex pb-3">
+                                <div class="numberOfPeople ms-3">
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
-        <div class="button mt-5">
-            <a href='/products'>View All Products</a>
+
         </div>
-        </div>
-        <hr>
-        <!-- start enhancecategory component -->
+
         <div class="category pt-3">
             <div class="title mt-5 mb-5">
                 <div class="categories d-flex align-items-center">
@@ -257,25 +254,20 @@
                         </div>
                         <div class="best-sales d-flex justify-content-between">
                             <h2>Best Selling Products</h2>
-                            <NavLink to='/products' class='ps-4 pe-4 border-0 rounded'>View All</NavLink>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3 col-sm-2 col-12">
-                            <div class="sale card" id='100' rate='5'>
+                        @foreach ($product_4 as $product)
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="sale card" id='1000' rate='5'>
                                 <div class="product">
                                     <div class="image">
-                                        <img src="website/assets/img/product-1.png" alt="" />
+                                        <img src="/storage/{{$product->img}}" alt="" />
                                     </div>
-                                    <div class="icons">
-                                        <button>
-                                            <i class="fa-solid fa-heart"></i>
-                                        </button>
-                                        <button class='view'>
-                                            <img src="website/assets/img/view.png" alt="" />
-                                        </button>
-                                    </div>
-                                    <button>Add To Cart</button>
+                                    <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="add-cart">Add To Cart</button>
+                                    </form>
                                     <p class='d-none'>
                                         Lorem ipsum dolor sit amet consectetur adipisicing
                                         elit. Voluptas nisi non magni libero itaque odit,
@@ -286,169 +278,18 @@
                                     </p>
                                 </div>
                                 <div class="details ps-3">
-                                    <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
+                                    <h6 class='pt-3'>{{$product['name']}}</h6>
                                     <p>
-                                        <span>$120</span>
-                                        <span class='ms-3'>
-                                            <del>$160</del>
-                                        </span>
+                                        <span>${{$product['price']}}</span>
                                     </p>
                                     <div class="evaluation d-flex pb-3">
-                                        <div class="stars">
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                        </div>
                                         <div class="numberOfPeople ms-3">
-                                            (88)
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-2 col-12">
-                            <div class="sale card" id='101' rate='5'>
-                                <div class="product">
-                                    <div class="image">
-                                        <img src="website/assets/img/product-2.png" alt="" />
-                                    </div>
-                                    <div class="icons">
-                                        <button>
-                                            <i class="fa-solid fa-heart"></i>
-                                        </button>
-                                        <button class='view'>
-                                            <img src="website/assets/img/view.png" alt="" />
-                                        </button>
-                                    </div>
-                                    <button>Add To Cart</button>
-                                    <p class='d-none'>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing
-                                        elit. Voluptas nisi non magni libero itaque odit,
-                                        debitis inventore necessitatibus eligendi, suscipit
-                                        soluta. Consectetur rem consequuntur saepe quisquam
-                                        ullam dolorum, error reprehenderit natus mollitia modi
-                                        necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                    </p>
-                                </div>
-                                <div class="details ps-3">
-                                    <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                                    <p>
-                                        <span>$120</span>
-                                        <span class='ms-3'>
-                                            <del>$160</del>
-                                        </span>
-                                    </p>
-                                    <div class="evaluation d-flex pb-3">
-                                        <div class="stars">
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                        </div>
-                                        <div class="numberOfPeople ms-3">
-                                            (88)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-2 col-12">
-                            <div class="sale card" id='102' rate='5'>
-                                <div class="product">
-                                    <div class="image">
-                                        <img src="website/assets/img/product-3.png" alt="" />
-                                    </div>
-                                    <div class="icons">
-                                        <button>
-                                            <i class="fa-solid fa-heart"></i>
-                                        </button>
-                                        <button class='view'>
-                                            <img src="website/assets/img/view.png" alt="" />
-                                        </button>
-                                    </div>
-                                    <button>Add To Cart</button>
-                                    <p class='d-none'>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing
-                                        elit. Voluptas nisi non magni libero itaque odit,
-                                        debitis inventore necessitatibus eligendi, suscipit
-                                        soluta. Consectetur rem consequuntur saepe quisquam
-                                        ullam dolorum, error reprehenderit natus mollitia modi
-                                        necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                    </p>
-                                </div>
-                                <div class="details ps-3">
-                                    <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                                    <p>
-                                        <span>$120</span>
-                                        <span class='ms-3'>
-                                            <del>$160</del>
-                                        </span>
-                                    </p>
-                                    <div class="evaluation d-flex pb-3">
-                                        <div class="stars">
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                        </div>
-                                        <div class="numberOfPeople ms-3">
-                                            (88)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-2 col-12">
-                            <div class="sale card" id='103' rate='5'>
-                                <div class="product">
-                                    <div class="image">
-                                        <img src="website/assets/img/product-4.png" alt="" />
-                                    </div>
-                                    <div class="icons">
-                                        <button>
-                                            <i class="fa-solid fa-heart"></i>
-                                        </button>
-                                        <button class='view'>
-                                            <img src="website/assets/img/view.png" alt="" />
-                                        </button>
-                                    </div>
-                                    <button>Add To Cart</button>
-                                    <p class='d-none'>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing
-                                        elit. Voluptas nisi non magni libero itaque odit,
-                                        debitis inventore necessitatibus eligendi, suscipit
-                                        soluta. Consectetur rem consequuntur saepe quisquam
-                                        ullam dolorum, error reprehenderit natus mollitia modi
-                                        necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                    </p>
-                                </div>
-                                <div class="details ps-3">
-                                    <h6 class='pt-3'>HAVIT HV-G92 Gamepad</h6>
-                                    <p>
-                                        <span>$120</span>
-                                        <span class='ms-3'>
-                                            <del>$160</del>
-                                        </span>
-                                    </p>
-                                    <div class="evaluation d-flex pb-3">
-                                        <div class="stars">
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                            <img src="website/assets/img/star.png" alt="" />
-                                        </div>
-                                        <div class="numberOfPeople ms-3">
-                                            (88)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="row parent py-5 m-0 px-4">
@@ -500,21 +341,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2000' rate='3'>
+                    @foreach ($product8 as $product)
+                    <div class="col-md-3 col-sm-6 col-12 mt-3">
+                        <div class="sale card" id='1000' rate='5'>
                             <div class="product">
                                 <div class="image">
-                                    <img src="website/assets/img/product-10.png" alt="" />
+                                    <img src="/storage/{{$product->img}}" alt="" />
                                 </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="add-cart">Add To Cart</button>
+                                </form>
                                 <p class='d-none'>
                                     Lorem ipsum dolor sit amet consectetur adipisicing
                                     elit. Voluptas nisi non magni libero itaque odit,
@@ -525,355 +362,22 @@
                                 </p>
                             </div>
                             <div class="details ps-3">
-                                <h6 class='pt-3'>Breed Dry Dog Food</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$120</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (35)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2001' rate='4'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-12.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
+                                <h6 class='pt-3'>{{$product['name']}}</h6>
+                                <p>
+                                    <span>${{$product['price']}}</span>
                                 </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>CANON EOS DSLR Camera</h6>
-
                                 <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$360</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (95)
+                                    <div class="numberOfPeople ms-3">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2002' rate='5'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-11.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>ASUS FHD Gaming Laptop</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$700</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (325)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2003' rate='4'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-13.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>Curology Product Set </h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$500</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (145)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='row mt-5 mb-5'>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2004' rate='5'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-9.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>Kids Electric Car</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$960</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (65)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2005' rate='5'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-8.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>Jr. Zoom Soccer Cleats</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$1160</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (35)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2006' rate='4'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-7.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>GP11 Shooter USB Gamepad</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$660</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (55)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-2 col-12">
-                        <div class="sale card" id='2007' rate='3'>
-                            <div class="product">
-                                <div class="image">
-                                    <img src="website/assets/img/product-6.png" alt="" />
-                                </div>
-                                <div class="icons">
-                                    <button>
-                                        <i class="fa-solid fa-heart"></i>
-                                    </button>
-                                    <button class='view'>
-                                        <img src="website/assets/img/view.png" alt="" />
-                                    </button>
-                                </div>
-                                <button>Add To Cart</button>
-                                <p class='d-none'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. Voluptas nisi non magni libero itaque odit,
-                                    debitis inventore necessitatibus eligendi, suscipit
-                                    soluta. Consectetur rem consequuntur saepe quisquam
-                                    ullam dolorum, error reprehenderit natus mollitia modi
-                                    necessitatibus culpa aliquid quidem magnam quas voluptatum!
-                                </p>
-                            </div>
-                            <div class="details ps-3">
-                                <h6 class='pt-3'>Quilted Satin Jacket</h6>
-
-                                <div class="evaluation d-flex pb-3">
-                                    <div class="stars d-flex justify-content-center align-items-center">
-                                        <p class='mt-3 me-2'>
-                                            <span>$660</span>
-                                            <span></span>
-                                        </p>
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                        <img src="website/assets/img/star-1.png" alt="" />
-                                    </div>
-                                    <div class="numberOfPeople ms-3 mt-3">
-                                        (55)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="button">
-                <a href='/products'>View All Products</a>
+            <div class="button mt-5">
+                <a href="{{route('website.allProducts')}}">View All Products</a>
             </div>
         </div>
         <!-- end our product or explorer -->
@@ -949,10 +453,12 @@
 
 
     @include('shared.website.footer')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    <script src="/assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/website/assets/js/landing.js"></script>
+    <script>
+    AOS.init();
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@extends('shared.admin.app');
+@extends('shared.admin.app')
 @section('content')
 <div class="recent-orders">
     <h2>Recent Orders</h2>
@@ -24,6 +24,5 @@
             @endforeach
         </tbody>
     </table>
-    <a href="">Show All</a>
 </div>
 @endsection

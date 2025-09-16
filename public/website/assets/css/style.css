@@ -70,7 +70,7 @@
     position: relative;
 }
 
-.sale:hover>.product button {
+.sale:hover>.product form button {
     bottom: 0;
 }
 
@@ -81,7 +81,7 @@
     overflow: hidden;
 }
 
-.sale .product>button {
+.sale .product>form button {
     position: absolute;
     bottom: -50px;
     width: 100%;
@@ -113,7 +113,7 @@
     -o-transform: translate(-50%, -40%);
 }
 
-.sale .product .icons {
+/* .sale .product .icons {
     height: 76px;
     position: absolute;
     top: 10px;
@@ -121,9 +121,9 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
+} */
 
-.sale .product .icons button {
+/* .sale .product .icons button {
     border: none;
     width: 34px;
     height: 34px;
@@ -138,9 +138,9 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-}
+} */
 
-.sale .product .icons button img {
+/* .sale .product .icons button img {
     width: 100% !important;
     height: 100% !important;
     z-index: 1;
@@ -150,14 +150,16 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-}
+} */
 
 .sale .details p span:first-child {
     color: #DB4444;
 }
 
 .sale .details p span:last-child {
-    color: #838383;
+    color: #DB4444;
+    font-weight: 600;
+    f
 }
 
 .sale .details .evaluation {

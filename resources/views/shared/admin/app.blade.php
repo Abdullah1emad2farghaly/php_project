@@ -36,24 +36,24 @@
                     </div>
                 </div>
                 <div class="sidebar">
-                    <x-actived route="admin.index" icon="fa-solid fa-table-columns" label="Dashboard"/>
-                    <x-actived route="admin.customers" icon="fa-solid fa-person-military-pointing" label="Customers"/>
-                    <x-actived route="admin.orders.index" icon="fa-brands fa-first-order" label="Orders"/>
-                    <x-actived route="admin.products.index" icon="fa-brands fa-product-hunt" label="Products"/>
-                    <x-actived route="admin.products.create" icon="fa-solid fa-address-card" label="Add Product"/>
-                    <x-actived route="admin.categories.index" icon="fa-brands fa-product-hunt" label="Category"/>
-<form method="POST" action="{{ route('admin.logout') }}">
-    @csrf
-    <button type="submit" class="btn btn-link p-0">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
-    </button>
-</form>
+                    <x-actived route="admin.index" icon="fa-solid fa-table-columns" label="Dashboard" />
+                    <x-actived route="admin.customers" icon="fa-solid fa-person-military-pointing" label="Customers" />
+                    <x-actived route="admin.orders.index" icon="fa-brands fa-first-order" label="Orders" />
+                    <x-actived route="admin.products.index" icon="fa-brands fa-product-hunt" label="Products" />
+                    <x-actived route="admin.products.create" icon="fa-solid fa-address-card" label="Add Product" />
+                    <x-actived route="admin.categories.index" icon="fa-brands fa-product-hunt" label="Category" />
+                    <form method="POST" action="{{ route('admin.logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link p-0" style="cursor: pointer;">
+                            <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span> Log out
+                        </button>
+                    </form>
 
 
                 </div>
             </aside>
             @yield('sales')
-           
+
             @yield('content')
             <!-- ==================================================================================================== -->
             </main>
