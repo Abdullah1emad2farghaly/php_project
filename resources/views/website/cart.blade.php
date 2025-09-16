@@ -75,11 +75,13 @@
                 </div>
             </div>
         </form>
+        @foreach ($products as $product)
         <form action="{{ route('cart.destroy', $product->order_id) }}" method="POST"
             id="delete-form-{{ $product->order_id }}" style="display: none;">
             @csrf
             @method('DELETE')
         </form>
+        @endforeach
         <aside class="cart-total">
             <h3 id="cart-total-heading">Cart Total</h3>
             <div class="totals-row">
