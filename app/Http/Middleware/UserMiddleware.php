@@ -7,16 +7,17 @@ use Illuminate\Support\Facades\Auth;
 
 class UserMiddleware
 {
-    public function handle($request, Closure $next)
-    {
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
-        if (Auth::user()->role === 'admin') {
-            return redirect()->route('admin.dashboard'); // رجعه ع الـ Admin
-        }
-
-        return $next($request);
+public function handle($request, Closure $next)
+{
+    if (!Auth::check()) {
+        return redirect()->route('website.login.form'); 
     }
+
+    if (Auth::user()->role === 'admin') {
+        return redirect()->route('admin.index'); 
+    }
+
+    return $next($request);
+}
+
 }

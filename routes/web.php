@@ -17,7 +17,7 @@ Route::middleware('guest')->group(function () {
 });
 
 // Pages accessible only for authenticated users
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth',"IsUser"])->group(function () {
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('website.logout');
 
