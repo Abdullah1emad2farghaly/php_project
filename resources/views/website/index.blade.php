@@ -149,20 +149,13 @@
             </div>
             <div class="row">
                 @foreach ($product4 as $product)
-                <div class="col-md-3 col-sm-6 col-12">
+                <div class="col-md-3 col-sm-6 col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1000">
                     <div class="sale card" id='1000' rate='5'>
                         <div class="product">
                             <div class="image">
                                 <img src="/storage/{{$product->img}}" alt="" />
                             </div>
-                            <!-- <div class="icons">
-                                <button>
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
-                                <button class='view'>
-                                    <img src="website/assets/img/view.png" alt="" />
-                                </button>
-                            </div> -->
                             <form action="{{ route('cart.add', $product->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="add-cart">Add To Cart</button>
@@ -196,14 +189,17 @@
 
         <div class="category pt-3">
             <div class="title mt-5 mb-5">
-                <div class="categories d-flex align-items-center">
+                <div class="categories d-flex align-items-center" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     <p class='mt-3'>Categories</p>
                 </div>
-                <div class="category d-flex mt-2 mb-4">
+                <div class="category d-flex mt-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1000">
                     <h2>Browse By Category</h2>
                 </div>
             </div>
-            <div class="swiper row gap-3 justify-content-center">
+            <div class="swiper row gap-3 justify-content-center" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <div class="swiper-slide ">
                     <div class=" card d-flex align-items-center justify-content-center pt-3">
                         <img src="website/assets/img/phone.png" class='mb-3' alt="" />
@@ -249,16 +245,19 @@
             <div class='container'>
                 <div class="flash-sales mb-5">
                     <div class="title mb-5">
-                        <div class="this-month mb-3 ">
+                        <div class="this-month mb-3 " data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                            data-aos-duration="1000">
                             <p class='pt-2'>This Month</p>
                         </div>
-                        <div class="best-sales d-flex justify-content-between">
+                        <div class="best-sales d-flex justify-content-between" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                             <h2>Best Selling Products</h2>
                         </div>
                     </div>
                     <div class="row">
                         @foreach ($product_4 as $product)
-                        <div class="col-md-3 col-sm-6 col-12">
+                        <div class="col-md-3 col-sm-6 col-12" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-anchor-placement="top-bottom">
                             <div class="sale card" id='1000' rate='5'>
                                 <div class="product">
                                     <div class="image">
@@ -293,8 +292,8 @@
                     </div>
                 </div>
                 <div class="row parent py-5 m-0 px-4">
-                    <div
-                        class="col-lg-6 left d-lg-block d-flex flex-column justify-content-center align-items-center text-lg-start text-center">
+                    <div class="col-lg-6 left d-lg-block d-flex flex-column justify-content-center align-items-center text-lg-start text-center"
+                        data-aos="fade-right" data-aos-duration="1000">
                         <p>Categories</p>
                         <h1 class='text-white mb-5'>
                             Enhance Your <br /> Music Experience
@@ -320,7 +319,7 @@
                         <button class='px-4 py-2 border-0 rounded'>Buy Now!</button>
                     </div>
 
-                    <div class="col-lg-6 right d-lg-block d-none">
+                    <div class="col-lg-6 right d-lg-block d-none" data-aos="fade-left" data-aos-duration="1000">
                         <!-- <img src="website/assets/img/ellipes-1.png" alt="" /> -->
                         <img src="website/assets/img/product-5.png" alt="" />
                     </div>
@@ -333,16 +332,19 @@
         <div class='flash-sales pb-5'>
             <div class="container">
                 <div class="title">
-                    <div class="today d-flex align-items-center">
+                    <div class="today d-flex align-items-center" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                         <p class='ms-5 mt-3'>Our Products</p>
                     </div>
-                    <div class="flash d-flex mt-4 mb-4">
+                    <div class="flash d-flex mt-4 mb-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                        data-aos-duration="1000">
                         <h2>Explore Our Products</h2>
                     </div>
                 </div>
                 <div class="row">
                     @foreach ($product8 as $product)
-                    <div class="col-md-3 col-sm-6 col-12 mt-3">
+                    <div class="col-md-3 col-sm-6 col-12 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                        data-aos-duration="1000">
                         <div class="sale card" id='1000' rate='5'>
                             <div class="product">
                                 <div class="image">
@@ -376,7 +378,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="button mt-5">
+            <div class="button mt-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <a href="{{route('website.allProducts')}}">View All Products</a>
             </div>
         </div>
@@ -385,20 +387,22 @@
         <!-- start feature component -->
         <div class='arrival px-3 mb-5'>
             <div class="title">
-                <div class="today d-flex align-items-center">
+                <div class="today d-flex align-items-center" data-aos-duration="1000" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom">
                     <p class='ms-5 mt-3'>Featured</p>
                 </div>
-                <div class="flash d-flex mt-4 mb-4">
+                <div class="flash d-flex mt-4 mb-4" data-aos-duration="1000" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom">
                     <h2>New Arrival</h2>
                 </div>
             </div>
             <div class="row p-0 m-0">
-                <div class="col-sm-6 product">
+                <div class="col-sm-6 product" data-aos="fade-right" data-aos-duration="1000">
                     <div class="card  border-0">
                         <img src="website/assets/img/playStation.png" alt="" />
                     </div>
                 </div>
-                <div class="col-sm-6 px-sm-2 p-0">
+                <div class="col-sm-6 px-sm-2 p-0" data-aos="fade-left" data-aos-duration="1000">
                     <div class="col-12 h-50">
                         <div class="card">
                             <img src="website/assets/img/woman.png" width="100%" height='100%' alt="" />
@@ -424,21 +428,24 @@
             </div>
             <div class="services mt-5 pt-5">
                 <div class="row p-0 m-0 justify-content-evenly">
-                    <div class='service text-center'>
+                    <div class='service text-center' data-aos-duration="1000" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom">
                         <div class='p-1 m-auto mb-3'>
                             <img src="website/assets/img/icon-service-1.png" alt="" />
                         </div>
                         <p class=''>FREE AND FAST DELIVERY</p>
                         <p>Free delivery for all orders over $140</p>
                     </div>
-                    <div class='service text-center'>
+                    <div class='service text-center' data-aos-delay="1000" data-aos-anchor-placement="top-bottom"
+                        data-aos-duration="1000" data-aos="fade-up">
                         <div class='p-1 m-auto mb-3'>
                             <img src="website/assets/img/icon-service-2.png" alt="" />
                         </div>
                         <p>24/7 CUSTOMER SERVICE</p>
                         <p>Friendly 24/7 customer support</p>
                     </div>
-                    <div class='service text-center'>
+                    <div class='service text-center' data-aos-delay="1500" data-aos-anchor-placement="top-bottom"
+                        data-aos-duration="1000" data-aos="fade-up">
                         <div class='p-1 m-auto mb-3'>
                             <img src="website/assets/img/icon-service-3.png" alt="" />
                         </div>
